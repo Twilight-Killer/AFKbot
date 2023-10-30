@@ -28,18 +28,18 @@ async def on_start(_, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    text="📜 Help Section",
+                    text="📜 Bagian Bantuan‌‌",
                     url=f"https://t.me/{botusername}?start=help",
                 ),
                 InlineKeyboardButton(
-                    text="🔧 Settings",
+                    text="🔧 Pengaturan",
                     callback_data="settings_callback",
                 ),
             ]
         ]
     )
     image = random.choice(RANDOM)
-    send = await message.reply_photo(image, caption=f"Hello! My name is {botname}.\n\nTo know more about me check help section. Active since {Uptime}", reply_markup=upl)
+    send = await message.reply_photo(image, caption=f"Hello! nama saya {botname}.\n\nUntuk mengetahui lebih banyak tentang saya, periksa bagian bantuan. Aktif sejak {Uptime}", reply_markup=upl)
     await put_cleanmode(message.chat.id, send.message_id)
     
 
@@ -49,13 +49,13 @@ async def on_help(_, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    text="📜 Help Section",
+                    text="📜 Bagian Bantuan",
                     url=f"https://t.me/{botusername}?start=help",
                 ),
             ]
         ]
     )
-    send = await message.reply_text("Contact me in PM for help.", reply_markup=upl)
+    send = await message.reply_text("Hubungi saya di PM untuk bantuan‌‌.", reply_markup=upl)
     await put_cleanmode(message.chat.id, send.message_id)
 
 @app.on_message(filters.command(["start"]) & filters.private & ~filters.edited)
@@ -71,14 +71,14 @@ async def on_private_start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="➕ Add me to a Group",
+                        text="➕ Tambahkan saya ke Group",
                         url=f"https://t.me/{botusername}?startgroup=true",
                     ),
                 ]
             ]
         )
         image = random.choice(RANDOM)
-        await message.reply_photo(image, caption=f"Hello! My name is {botname}.\n\nTo know more about me check help section by /help. Active since {Uptime}", reply_markup=upl)
+        await message.reply_photo(image, caption=f"Hello! nama saya {botname}.\n\nUntuk mengetahui lebih banyak tentang saya, periksa bagian /help. Aktif sejak {Uptime}", reply_markup=upl)
 
 @app.on_message(filters.command(["help"]) & filters.private & ~filters.edited)
 async def on_private_help(_, message: Message):
@@ -91,14 +91,14 @@ async def on_close_button(client, CallbackQuery):
 
 @app.on_callback_query(filters.regex("cleanmode_answer"))
 async def on_cleanmode_button(client, CallbackQuery):
-    await CallbackQuery.answer("⁉️ What is This?\n\nWhen activated, Bot will delete its message after 5 Mins to make your chat clean and clear.", show_alert=True)
+    await CallbackQuery.answer("⁉️ Apa ini?\n\nSaat diaktifkan, Bot akan menghapus pesannya setelah 5 Menit agar obrolan Anda bersih dan jelas.‌‌", show_alert=True)
 
 @app.on_callback_query(filters.regex("settings_callback"))
 async def on_settings_button(client, CallbackQuery):
     await CallbackQuery.answer()
     status = await is_cleanmode_on(CallbackQuery.message.chat.id)
     buttons = settings_markup(status)
-    return await CallbackQuery.edit_message_text(f"⚙️ **AFK Bot Settings**\n\n🖇**Group:** {CallbackQuery.message.chat.title}\n🔖**Group ID:** `{CallbackQuery.message.chat.id}`\n\n💡**Choose the function buttons from below which you want to edit or change.**", reply_markup=InlineKeyboardMarkup(buttons),)
+    return await CallbackQuery.edit_message_text(f"⚙️ **Pengaturan AFK Bot**\n\n🖇**Group:** {CallbackQuery.message.chat.title}\n🔖**Group ID:** `{CallbackQuery.message.chat.id}`\n\n💡**Pilih tombol fungsi dari bawah yang ingin Anda edit atau ubah‌‌.**", reply_markup=InlineKeyboardMarkup(buttons),)
 
 @app.on_callback_query(filters.regex("CLEANMODE"))
 async def on_cleanmode_change(client, CallbackQuery):
@@ -106,7 +106,7 @@ async def on_cleanmode_change(client, CallbackQuery):
     if admin.status in ["creator", "administrator"]:
         pass
     else:
-        return await CallbackQuery.answer("Only Admins can perform this action.", show_alert=True)
+        return await CallbackQuery.answer("Hanya Admin yang dapat melakukan tindakan ini‌‌.", show_alert=True)
     await CallbackQuery.answer()
     status = None
     if await is_cleanmode_on(CallbackQuery.message.chat.id):
