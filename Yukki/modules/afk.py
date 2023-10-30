@@ -66,7 +66,7 @@ async def active_afk(_, message: Message):
                     )
         except Exception as e:
             send =  await message.reply_text(
-                f"**{message.from_user.first_name}** is back online",
+                f"**{message.from_user.first_name}** kembali online",
                 disable_web_page_preview=True,
             )
         await put_cleanmode(message.chat.id, send.message_id)
