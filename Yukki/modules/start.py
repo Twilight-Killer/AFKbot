@@ -18,46 +18,7 @@ from pyrogram.errors import MessageNotModified
 from Yukki import app, boot, botname, botusername
 from Yukki.database.cleanmode import cleanmode_off, cleanmode_on, is_cleanmode_on
 from Yukki.helpers import get_readable_time, put_cleanmode, settings_markup, RANDOM, HELP_TEXT
-
-
-@app.on_message(filters.command(["start", "settings"]) & filters.group & ~filters.edited)
-async def on_start(_, message: Message):
-    bot_uptime = int(time.time() - boot)
-    Uptime = get_readable_time(bot_uptime)
-    upl = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    text="📜 Bantuan‌‌",
-                    url=f"https://t.me/{botusername}?start=help",
-                ),
-                InlineKeyboardButton(
-                    text="🔧 Pengaturan",
-                    callback_data="settings_callback",
-                ),
-            ]
-        ]
-    )
-    image = random.choice(RANDOM)
-    send = await message.reply_photo(image, caption=f"Hello! nama saya {botname}.\n\nUntuk mengetahui lebih banyak tentang saya, periksa bagian bantuan. Aktif sejak {Uptime}", reply_markup=upl)
-    await put_cleanmode(message.chat.id, send.message_id)
     
-
-@app.on_message(filters.command(["help"]) & filters.group & ~filters.edited)
-async def on_help(_, message: Message):
-    upl = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    text="📜 Bantuan",
-                    url=f"https://t.me/{botusername}?start=help",
-                ),
-            ]
-        ]
-    )
-    send = await message.reply_text("Hubungi saya di PM untuk bantuan‌‌.", reply_markup=upl)
-    await put_cleanmode(message.chat.id, send.message_id)
-        
 @app.on_callback_query(filters.regex("close"))
 async def on_close_button(client, CallbackQuery):
     await CallbackQuery.answer()
