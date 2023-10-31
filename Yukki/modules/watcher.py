@@ -96,19 +96,19 @@ async def chat_watcher_func(_, message):
                         (int(time.time() - timeafk))
                     )
                     if afktype == "text":
-                        msg += f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\n"
+                        msg += f"**{replied_first_name[:25]}**Tidak ditempat sejak {seenago}\n\n"
                     if afktype == "text_reason":
-                        msg += f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n"
+                        msg += f"**{replied_first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n"
                     if afktype == "animation":
                         if str(reasonafk) == "None":
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\n",
+                                caption=f"**{replied_first_name[:25]}**Tidak ditempat sejak {seenago}\n\n",
                             )
                         else:
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                caption=f"**{replied_first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                             )
                     if afktype == "photo":
                         if str(reasonafk) == "None":
@@ -119,7 +119,7 @@ async def chat_watcher_func(_, message):
                         else:
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                caption=f"**{replied_first_name[:25]}** Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                             )
                 except Exception as e:
                     msg += f"**{replied_first_name}** Tidak ditempat\n\n"
@@ -153,34 +153,34 @@ async def chat_watcher_func(_, message):
                             (int(time.time() - timeafk))
                         )
                         if afktype == "text":
-                            msg += f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\n"
+                            msg += f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n"
                         if afktype == "text_reason":
-                            msg += f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n"
+                            msg += f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\n",
+                                    caption=f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n",
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                    caption=f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\n",
+                                    caption=f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n",
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**{user.first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                    caption=f"**{user.first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                     except:
                         msg += (
-                            f"**{user.first_name[:25]}** Tidak ditempat\n\n"
+                            f"**{user.first_name[:25]}**Tidak ditempat\n\n"
                         )
             elif (entity[j].type) == "text_mention":
                 try:
@@ -203,33 +203,33 @@ async def chat_watcher_func(_, message):
                             (int(time.time() - timeafk))
                         )
                         if afktype == "text":
-                            msg += f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\n"
+                            msg += f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n"
                         if afktype == "text_reason":
-                            msg += f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n"
+                            msg += f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\n",
+                                    caption=f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n",
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                    caption=f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\n",
+                                    caption=f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n",
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**{first_name[:25]}** Tidak ditempat sejak {seenago}\n\nAlasan: `{reasonafk}`\n\n",
+                                    caption=f"**{first_name[:25]}**Tidak ditempat sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                     except:
-                        msg += f"**{first_name[:25]}** Tidak ditempat\n\n"
+                        msg += f"**{first_name[:25]}**Tidak ditempat\n\n"
             j += 1
     if msg != "":
         try:
@@ -255,7 +255,7 @@ async def welcome(_, message: Message):
         try:
             if member.id == botid:
                 send =  await message.reply_text(
-                    f"Terima kasih telah menerima saya‌‌ {message.chat.title}\n\n{botname} is alive."
+                    f"Terima kasih telah menambahkan saya di {message.chat.title}.\n\n{botname}."
                 )
                 await put_cleanmode(message.chat.id, send.message_id)
         except:
