@@ -242,21 +242,3 @@ async def chat_watcher_func(_, message):
         await put_cleanmode(message.chat.id, send.message_id)
     except:
         return
-
-
-welcome_group = 2
-
-
-@app.on_message(filters.new_chat_members, group=welcome_group)
-async def welcome(_, message: Message):
-    chat_id = message.chat.id
-    await add_served_chat(chat_id)
-    for member in message.new_chat_members:
-        try:
-            if member.id == botid:
-                send =  await message.reply_text(
-                    f"Terima kasih telah menambahkan saya di {message.chat.title}.\n\n{botname}."
-                )
-                await put_cleanmode(message.chat.id, send.message_id)
-        except:
-            return
