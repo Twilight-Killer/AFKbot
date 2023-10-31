@@ -57,26 +57,26 @@ async def chat_watcher_func(_, message):
                 if str(reasonafk) == "None":
                     send = await message.reply_animation(
                         data,
-                        caption=f"**{user_name[:25]}**Kembali online sejak {seenago}\n\n",
+                        caption=f"**{user_name[:25]}**Kembali **Online** dari {seenago} lalu.\n\n",
                     )
                 else:
                     send = await message.reply_animation(
                         data,
-                        caption=f"**{user_name[:25]}**Kembali online sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
+                        caption=f"**{user_name[:25]}**Kembali **Online** dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                     )
             if afktype == "photo":
                 if str(reasonafk) == "None":
                     send = await message.reply_photo(
                         photo=f"downloads/{userid}.jpg",
-                        caption=f"**{user_name[:25]}**Kembali online sejak {seenago}\n\n",
+                        caption=f"**{user_name[:25]}**Kembali **Online** dari {seenago} lalu.\n\n",
                     )
                 else:
                     send = await message.reply_photo(
                         photo=f"downloads/{userid}.jpg",
-                        caption=f"**{user_name[:25]}**Kembali online sejak {seenago}\n\n**Alasan:** `{reasonafk}`\n\n",
+                        caption=f"**{user_name[:25]}**Kembali **Online** dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                     )
         except:
-            msg += f"**{user_name[:25]}**Kembali online\n\n"
+            msg += f"**{user_name[:25]}**Kembali Online\n\n"
         
     # Replied to a User which is AFK
     if message.reply_to_message:
