@@ -57,10 +57,6 @@ async def on_help(_, message: Message):
     )
     send = await message.reply_text("Hubungi saya di PM untuk bantuan‌‌.", reply_markup=upl)
     await put_cleanmode(message.chat.id, send.message_id)
-
-@app.on_message(filters.command(["help"]) & filters.private & ~filters.edited)
-async def on_private_help(_, message: Message):
-    return await message.reply_text(HELP_TEXT)
         
 @app.on_callback_query(filters.regex("close"))
 async def on_close_button(client, CallbackQuery):
