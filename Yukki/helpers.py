@@ -81,6 +81,7 @@ RANDOM = [
     "https://telegra.ph//file/07bb5f805178ec24871d3.jpg"
 ]
 
+HELP_TEXT = None
 
 def settings_markup(status: Union[bool, str] = None):
     buttons = [
