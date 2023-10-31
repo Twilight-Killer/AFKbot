@@ -96,30 +96,30 @@ async def chat_watcher_func(_, message):
                         (int(time.time() - timeafk))
                     )
                     if afktype == "text":
-                        msg += f"**{replied_first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n"
+                        msg += f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n"
                     if afktype == "text_reason":
-                        msg += f"**{replied_first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
+                        msg += f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
                     if afktype == "animation":
                         if str(reasonafk) == "None":
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**{replied_first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n",
+                                caption=f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                             )
                         else:
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**{replied_first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                caption=f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                             )
                     if afktype == "photo":
                         if str(reasonafk) == "None":
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"**{replied_first_name[:25]}**Sedang offline dari {seenago} lalu.\n\n",
+                                caption=f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                             )
                         else:
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"**{replied_first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                caption=f"**{replied_first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                             )
                 except Exception as e:
                     msg += f"**{replied_first_name}** Sedang Tidak Online.\n\n"
@@ -153,30 +153,30 @@ async def chat_watcher_func(_, message):
                             (int(time.time() - timeafk))
                         )
                         if afktype == "text":
-                            msg += f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n"
+                            msg += f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n"
                         if afktype == "text_reason":
-                            msg += f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
+                            msg += f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n",
+                                    caption=f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                    caption=f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n",
+                                    caption=f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**{user.first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                    caption=f"**{user.first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                     except:
                         msg += (
@@ -203,30 +203,30 @@ async def chat_watcher_func(_, message):
                             (int(time.time() - timeafk))
                         )
                         if afktype == "text":
-                            msg += f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n"
+                            msg += f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n"
                         if afktype == "text_reason":
-                            msg += f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
+                            msg += f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n",
+                                    caption=f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                    caption=f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n",
+                                    caption=f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n",
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**{first_name[:25]}** Sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
+                                    caption=f"**{first_name[:25]}** sedang offline dari {seenago} lalu.\n\n**Alasan:** `{reasonafk}`\n\n",
                                 )
                     except:
                         msg += f"**{first_name[:25]}** Sedang tidak online\n\n"
