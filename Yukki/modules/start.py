@@ -72,7 +72,7 @@ async def on_settings_button(client, CallbackQuery):
     await CallbackQuery.answer()
     status = await is_cleanmode_on(CallbackQuery.message.chat.id)
     buttons = settings_markup(status)
-    return await CallbackQuery.edit_message_text(f"⚙️ **Pengaturan AFK Bot**\n\n🖇**Group:** {CallbackQuery.message.chat.title}\n🔖**Group ID:** `{CallbackQuery.message.chat.id}`\n\n💡**Pilih tombol fungsi dari bawah yang ingin Anda edit atau ubah‌‌.**", reply_markup=InlineKeyboardMarkup(buttons),)
+    return await CallbackQuery.edit_message_text(f"⚙️ **Pengaturan AFK Bot**\n\n🖇**Group:** {CallbackQuery.message.chat.title}\n🔖**Group ID:** `{CallbackQuery.message.chat.id}`\n\n💡**Pilih tombol fungsi dibawah yang ingin Anda edit atau ubah‌‌.**", reply_markup=InlineKeyboardMarkup(buttons),)
 
 @app.on_callback_query(filters.regex("CLEANMODE"))
 async def on_cleanmode_change(client, CallbackQuery):
