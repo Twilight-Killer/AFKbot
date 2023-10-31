@@ -28,7 +28,7 @@ async def on_start(_, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    text="📜 Bagian Bantuan‌‌",
+                    text="📜 Bantuan‌‌",
                     url=f"https://t.me/{botusername}?start=help",
                 ),
                 InlineKeyboardButton(
@@ -49,7 +49,7 @@ async def on_help(_, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    text="📜 Bagian Bantuan",
+                    text="📜 Bantuan",
                     url=f"https://t.me/{botusername}?start=help",
                 ),
             ]
@@ -57,28 +57,6 @@ async def on_help(_, message: Message):
     )
     send = await message.reply_text("Hubungi saya di PM untuk bantuan‌‌.", reply_markup=upl)
     await put_cleanmode(message.chat.id, send.message_id)
-
-@app.on_message(filters.command(["start"]) & filters.private & ~filters.edited)
-async def on_private_start(_, message: Message):
-    if len(message.text.split()) > 1:
-        name = message.text.split(None, 1)[1]
-        if name[0:4] == "help":
-            return await message.reply_text(HELP_TEXT)
-    else:
-        bot_uptime = int(time.time() - boot)
-        Uptime = get_readable_time(bot_uptime)
-        upl = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="➕ Tambahkan saya ke Group",
-                        url=f"https://t.me/{botusername}?startgroup=true",
-                    ),
-                ]
-            ]
-        )
-        image = random.choice(RANDOM)
-        await message.reply_photo(image, caption=f"Hello! nama saya {botname}.\n\nUntuk mengetahui lebih banyak tentang saya, periksa bagian /help. Aktif sejak {Uptime}", reply_markup=upl)
 
 @app.on_message(filters.command(["help"]) & filters.private & ~filters.edited)
 async def on_private_help(_, message: Message):
