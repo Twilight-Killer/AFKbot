@@ -30,7 +30,7 @@ async def total_users(_, message: Message):
         return await message.reply_text(f"**Error:-** {e}")
     users = len(afk_users)
     return await message.reply_text(
-        f"Total Pengguna AFK di Bot‌‌:- **{users}**"
+        f"Total Pengguna AFK di Bot‌‌: **{users}**"
     )
 
 
