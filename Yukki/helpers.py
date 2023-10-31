@@ -82,21 +82,6 @@ RANDOM = [
 ]
 
 
-HELP_TEXT = f"""Selamat datang di {botname}'s Bagian Bantuan‌‌
-
-
-/afk - Ini akan membuat Anda offline‌‌.
-
-/afk [Alasan] - Ini akan membuat Anda offline dengan suatu alasan‌‌.
-
-/afk [Membalas Sticker/Photo] - Ini akan membuat Anda offline dengan gambar atau stiker‌‌.
-
-/afk [Membalas Sticker/Photo] [Alasan] - Ini akan membuat Anda offline dengan gambar dan alasan keduanya.‌‌
-
-
-/settings - Untuk mengubah atau mengedit pengaturan dasar Offine Bot.‌‌
-"""
-
 def settings_markup(status: Union[bool, str] = None):
     buttons = [
         [
