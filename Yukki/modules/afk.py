@@ -39,30 +39,30 @@ async def active_afk(_, message: Message):
                 )
             if afktype == "text_reason":
                 send = await message.reply_text(
-                    f"**{message.from_user.first_name}** Kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
+                    f"**{message.from_user.first_name}** kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
                     disable_web_page_preview=True,
                 )
             if afktype == "animation":
                 if str(reasonafk) == "None":
                     send =  await message.reply_animation(
                         data,
-                        caption=f"**{message.from_user.first_name}** Kembali online {seenago}",
+                        caption=f"**{message.from_user.first_name}** kembali online {seenago}",
                     )
                 else:
                     send = await message.reply_animation(
                         data,
-                        caption=f"**{message.from_user.first_name}** Kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
+                        caption=f"**{message.from_user.first_name}** kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
                     )
             if afktype == "photo":
                 if str(reasonafk) == "None":
                     send = await message.reply_photo(
                         photo=f"downloads/{user_id}.jpg",
-                        caption=f"**{message.from_user.first_name}** Kembali online {seenago}",
+                        caption=f"**{message.from_user.first_name}** kembali online {seenago}",
                     )
                 else:
                     send = await message.reply_photo(
                         photo=f"downloads/{user_id}.jpg",
-                        caption=f"**{message.from_user.first_name}** Kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
+                        caption=f"**{message.from_user.first_name}** kembali online {seenago}\n\n**Alasan:** `{reasonafk}`",
                     )
         except Exception as e:
             send =  await message.reply_text(
@@ -181,6 +181,6 @@ async def active_afk(_, message: Message):
 
     await add_afk(user_id, details)
     send = await message.reply_text(
-        f"{message.from_user.first_name} Sedang Offine!"
+        f"{message.from_user.first_name} sedang Offine!"
     )
     await put_cleanmode(message.chat.id, send.message_id)
