@@ -21,9 +21,9 @@ loop = asyncio.get_event_loop()
 async def initiate_bot():
     for all_module in ALL_MODULES:
         importlib.import_module("Yukki.modules." + all_module)
-    print("Started AFKbot.")
+    print("AFKbot Started.")
     await idle()
-    print("Stopping Bot. GoodBye!")
+    print("Bot Stopped. GoodBye!")
 
 
 if __name__ == "__main__":
