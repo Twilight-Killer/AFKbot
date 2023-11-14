@@ -26,7 +26,7 @@ async def on_close_button(client, CallbackQuery):
 
 @app.on_callback_query(filters.regex("cleanmode_answer"))
 async def on_cleanmode_button(client, CallbackQuery):
-    await CallbackQuery.answer("❗Informasi.\n\nSaat diaktifkan, Bot akan menghapus pesan setelah 5 Menit agar obrolan Anda bersih dan jelas.‌‌", show_alert=True)
+    await CallbackQuery.answer("❗Info.\n\nSaat diaktifkan, Bot akan menghapus pesan setelah 5 Menit agar obrolan Anda bersih dan jelas.‌‌", show_alert=True)
 
 @app.on_callback_query(filters.regex("settings_callback"))
 async def on_settings_button(client, CallbackQuery):
@@ -41,7 +41,7 @@ async def on_cleanmode_change(client, CallbackQuery):
     if admin.status in ["creator", "administrator"]:
         pass
     else:
-        return await CallbackQuery.answer("Hanya Admin yang dapat melakukan tindakan ini‌‌.", show_alert=True)
+        return await CallbackQuery.answer("Hanya Admin yang dapat melakukan tindakan ini‌‌!", show_alert=True)
     await CallbackQuery.answer()
     status = None
     if await is_cleanmode_on(CallbackQuery.message.chat.id):
